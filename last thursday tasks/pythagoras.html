@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pythagoras Theorem</title>
+    <style>
+      #theorem {
+        font-size: 18px;
+        margin-top: 20px;
+      }
+      canvas {
+        border: 2px solid red;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="400" height="300">
+      <polygon
+        points="50,250 350,250 50,50"
+        fill="red"
+        stroke="black"
+        stroke-width="3"
+      />
+      <text x="200" y="140" font-size="16">a</text>
+      <text x="30" y="170" font-size="16">b</text>
+      <text x="170" y="270" font-size="16">c</text>
+    </svg>
+
+    <div id="theorem">
+      <math>
+        <mi>a</mi>
+        <mo>=</mo>
+        <msqrt>
+          <msup>
+            <mi>b</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>+</mo>
+          <msup>
+            <mi>c</mi>
+            <mn>2</mn>
+          </msup>
+        </msqrt>
+      </math>
+    </div>
+    <div>
+      <canvas id="canvas" width="500" height="350"></canvas>
+
+      <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+
+        var image = new Image();
+        image.src = "./images/img.jpg";
+
+        image.onload = function () {
+          ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+          ctx.font = "36pt Georgia";
+          ctx.fillStyle = "white";
+          ctx.shadowColor = "black";
+          ctx.shadowBlur = 5;
+         
+
+          ctx.fillText("Hello, World!", 100, 100);
+        };
+      </script>
+    </div>
+  </body>
+</html>
