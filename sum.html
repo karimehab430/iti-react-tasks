@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Calculator</title>
+  <script>
+    function calculateSum() {
+      var sum = 0;
+      var value = parseInt(prompt("Enter a value (enter 0 to stop):"));
+
+      while (value !== 0) {
+        sum += value;
+        value = parseInt(prompt("Enter a value (enter 0 to stop):"));
+      }
+
+      return sum;
+    }
+
+    function displaySum() {
+      var totalSum = calculateSum();
+      document.getElementById("result").textContent = "The sum of the entered values is: " + totalSum;
+    }
+  </script>
+</head>
+<body>
+    <h1>Sum Calculator</h1>
+  <button onclick="displaySum()">Calculate Sum</button>
+  <div id="result"></div>
+</body>
+</html>

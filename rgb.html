@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text Color</title>
+    <style>
+      #text-container {
+        margin-top: 50px;
+        text-align: center;
+      }
+
+      #text {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .color-range {
+        margin-bottom: 10px;
+      }
+      .slider-label {
+      display: block;
+      margin-right: 0px;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="text-container">
+      <div id="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint eum fuga
+        id sequi at tenetur nostrum reiciendis praesentium voluptatum libero
+        aperiam dolorem numquam, minima neque, voluptatibus aliquam molestias
+        cumque molestiae!
+      </div>
+      <label for="red-range" class="slider-label">Red</label>
+      <input
+        type="range"
+        id="red-range"
+        class="color-range"
+        min="0"
+        max="255"
+        step="1"
+        onchange="changeTextColor()"
+      />
+      <label for="green-range" class="slider-label">Green</label>
+
+      <input
+        type="range"
+        id="green-range"
+        class="color-range"
+        min="0"
+        max="255"
+        step="1"
+        onchange="changeTextColor()"
+      />
+      <label for="blue-range" class="slider-label">Blue</label>
+
+      <input
+        type="range"
+        id="blue-range"
+        class="color-range"
+        min="0"
+        max="255"
+        step="1"
+        onchange="changeTextColor()"
+      />
+    </div>
+
+    <script>
+      function changeTextColor() {
+        var red = document.getElementById("red-range").value;
+        var green = document.getElementById("green-range").value;
+        var blue = document.getElementById("blue-range").value;
+        var text = document.getElementById("text");
+
+        text.style.color = "rgb(" + red + "," + green + "," + blue + ")";
+      }
+    </script>
+  </body>
+</html>

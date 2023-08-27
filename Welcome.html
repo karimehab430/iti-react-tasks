@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <script>
+    window.onload = function() {
+      var params = new URLSearchParams(window.location.search);
+      
+      var userName = location.search.split('&')[0].split('=')[1];
+      var userEmail = params.get('email');
+      
+      var greetingElement = document.getElementById('greeting');
+      var emailElement = document.getElementById('email');
+      
+      greetingElement.textContent = 'Welcome, ' + userName + '!';
+      emailElement.textContent = 'Registration Email: ' + userEmail;
+    }
+  </script>
+</head>
+<body>
+    <h1 id="greeting"></h1>
+    <p id="email"></p>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body{
+            background-color: #2C2F33
+;
+        }
+        table {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0 auto;
+    background-color: #7289DA;
+    border: 4px solid #ddd;
+    width: auto;
+    margin-top: 50px;
+  }
+  
+  th, td {
+    border-bottom: 1px solid black;
+    padding: 8px;
+  }
+  
+  th {
+    font-weight: bold;
+  }
+    
+    input[type="text"], input[type="lname"], input[type="password"], input[type="email"] {
+      padding: 5px;
+    }
+    label {
+    display: inline-block;
+    font-family: sans-serif;
+    padding: 5px 10px;
+     }
+    
+   
+  </style>
+</head>
+<body>
+  <form action="/Welcome.html">
+    <table>
+      
+      <tr>
+        <td><label for="name">First Name:</label></td>
+        <td><input type="text" id="name" name="name" required></td>
+      </tr>
+      <tr>
+        <td><label for="lname">Last Name:</label></td>
+        <td><input type="lname" id="lname" name="lname" required></td>
+      </tr>
+      <tr>
+        <td><label for="email">E-mail:</label></td>
+        <td><input type="email" id="email" name="email" required></td>
+      </tr>
+      <tr>
+        <td><label for="password">Password:</label></td>
+        <td><input type="password" id="password" name="password" required></td>
+      </tr>
+       <tr>
+        <td><label>Gender:</label></td>
+        <td>
+          <input type="radio" id="male" name="gender" value="male" required>
+          <label for="male">Male</label>
+          <br>
+          <input type="radio" id="female" name="gender" value="female" required>
+          <label for="female">Female</label>
+          <br>
+          
+        </td>
+      </tr>
+      <tr>
+        <td><label for="birthday">Birthday:</label></td>
+        <td><input type="date" id="birthday" name="birthday" required></td>
+      </tr>
+       <tr>
+        <th colspan="2"><u>Interests</u></th>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="checkbox" id="interest1" name="interest" value="interest1">
+          <label for="interest1">Sports</label>
+          <input type="checkbox" id="interest5" name="interest" value="interest5">
+          <label for="interest5">Fashion</label>
+          <br>
+          <input type="checkbox" id="interest2" name="interest" value="interest2">
+          <label for="interest2">Music</label>
+          <input type="checkbox" id="interest4" name="interest" value="interest4">
+          <label for="interest4">Movies</label>
+          <br>
+          <input type="checkbox" id="interest3" name="interest" value="interest3">
+          <label for="interest3">Books</label>
+          <input type="checkbox" id="interest6" name="interest" value="interest6">
+          <label for="interest6">Computer Stuff</label>
+          
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><input type="submit" value="Register"></td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

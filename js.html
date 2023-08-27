@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Headers</title>
+  <script>
+    function displayMessage() {
+      var message = prompt("Enter your message:");
+      var output = "";
+
+      for (var i = 1; i <= 6; i++) {
+        output += "<h" + i + ">" + message + " " + i + "</h" + i + ">";
+      }
+
+      document.getElementById("result").innerHTML = output;
+    }
+  </script>
+</head>
+<body>
+    <header>
+        <h1>Headers</h1>
+      </header>
+      <hr>
+  <button onclick="displayMessage()">Display Message</button>
+  <div id="result"></div>
+</body>
+</html>

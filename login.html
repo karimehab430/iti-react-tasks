@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+          background-color: #2C2F33
+;
+      }
+      
+  
+  input[type="text"], input[type="lname"], input[type="password"] {
+    padding: 5px;
+  }
+  label {
+    color: black;
+  display: inline-block;
+  font-family: sans-serif;
+  padding: 5px 10px;
+  
+}
+fieldset {
+  background-color: #eeeeee;
+}
+
+legend {
+  background-color: gray;
+  color: white;
+  padding: 5px 10px;
+}
+
+input {
+  margin: 5px;
+}
+
+  
+ 
+</style>
+</head>
+<body>
+    <form action="/page2.html">
+        <fieldset>
+         <legend><b>Login:</b></legend>
+         <label for="fname">User Name:</label>
+         <input type="text" id="fname" name="fname" placeholder="Enter Your User Name"><br><br>
+         <label for="password">Password</label>
+         <input type="password" id="password" name="password"><br><br>
+         <tr>
+            <td><label for="location">Location:</label></td>
+            <td>
+              <select id="location">
+                <option selected disabled>Select a location</option>
+                <optgroup label="Africa">
+                  <option>Egypt</option>
+                  <option>Algeria</option>
+                </optgroup>
+                <optgroup label="Asia">
+                  <option>Japan</option>
+                  <option>India</option>
+                </optgroup>
+                <optgroup label="Europe">
+                  <option>France</option>
+                  <option>Denmark</option>
+                </optgroup>
+              </select>
+            </td>
+          </tr>
+          <br><br>
+          <tr>
+            <td colspan="2">
+              <input type="checkbox" id="remember" name="remember">
+              <label for="remember">Remember me</label>
+            </td>
+          </tr>
+          <br>
+          <br>
+          <input type="submit" value="Submit">
+
+        </fieldset>
+       </form>
+</body>
+</html>

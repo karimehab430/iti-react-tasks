@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Handling Example</title>
+    <script>
+      function displayKeyDetails(event) {
+        var modifiers = [];
+
+        if (event.altKey) {
+          alert("Key Pressed: Alt");
+        }
+        if (event.ctrlKey) {
+          alert("Key Pressed: Ctrl");
+        }
+        if (event.shiftKey) {
+          alert("Key Pressed: Shift");
+        }
+
+        alert(
+          "Key Pressed: " +
+            String.fromCharCode(event.keyCode) +
+            "\nASCII Code of Key Pressed: " +
+            event.keyCode
+        );
+      }
+    </script>
+  </head>
+
+  <body>
+    <p>Press any key to display key details.</p>
+
+    <script>
+      document.addEventListener("keydown", displayKeyDetails);
+      oncontextmenu = function (e) {
+        e.preventDefault();
+      };
+    </script>
+  </body>
+</html>

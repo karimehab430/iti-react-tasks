@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Marble Animation</title>
+    <style>
+      .marble-container {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+    <script>
+      var marbles = ["marble1.jpg", "marble3.jpg"];
+      var currentMarbleIndex = 0;
+      var animationInterval;
+      var marble = document.getElementsByClassName("marble-image");
+
+      function changeColor() {
+        var orangeMarble = marble[currentMarbleIndex];
+        orangeMarble.src = "./marbels/marble3.jpg";
+
+        for (var i = 0; i < marble.length; i++) {
+          if (i != currentMarbleIndex) {
+            marble[i].src = "./marbels/marble1.jpg";
+          }
+        }
+
+        currentMarbleIndex++;
+        if (currentMarbleIndex >= marble.length) {
+          currentMarbleIndex = 0;
+        }
+      }
+
+      function startAnimation() {
+        changeColor();
+        animationInterval = setInterval(changeColor, 1000);
+      }
+
+      function stopAnimation() {
+        clearInterval(animationInterval);
+      }
+
+    </script>
+  </head>
+
+  <body>
+    <div class="marble-container">
+      <img
+        id="orange-marble"
+        class="marble-image"
+        src="./marbels/marble3.jpg"
+        alt="marble Image"
+        onmouseover="stopAnimation()"
+        onmouseleave="startAnimation()"
+      />
+      <img
+        class="marble-image"
+        src="./marbels/marble1.jpg"
+        alt="marble Image"
+        onmouseover="stopAnimation()"
+        onmouseleave="startAnimation()"
+      />
+      <img
+        class="marble-image"
+        src="./marbels/marble1.jpg"
+        alt="marble Image"
+        onmouseover="stopAnimation()"
+        onmouseleave="startAnimation()"
+      />
+      <img
+        class="marble-image"
+        src="./marbels/marble1.jpg"
+        alt="marble Image"
+        onmouseover="stopAnimation()"
+        onmouseleave="startAnimation()"
+      />
+      <img
+        class="marble-image"
+        src="./marbels/marble1.jpg"
+        alt="marble Image"
+        onmouseover="stopAnimation()"
+        onmouseleave="startAnimation()"
+      />
+    </div>
+    <script>
+      startAnimation();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+
+  <body>
+    <input type="button" value=" 1 " onclick="writeVal(this.value)" />
+    <input type="button" value=" 2 " onclick="writeVal(this.value)" />
+    <input type="button" value=" 3 " onclick="writeVal(this.value)" />
+    <input type="button" value=" 4 " onclick="writeVal(this.value)" />
+    <input type="button" value=" 5 " onclick="writeVal(this.value)" />
+    <input type="button" value=" 6 " onclick="writeVal(this.value)" />
+    <input
+      type="text"
+      name="usr"
+      value="abc"
+      id="txt1"
+      onfocus="select()"
+      onblur="console.log(this.value)"
+    />
+
+    <input type="button" value=" C " onclick="clearText()" />
+    <input type="button" value=" << " onclick="deleteCharacter()" />
+    <input type="button" value=" + " onclick="operation('+')" />
+    <input type="button" value=" - " onclick="operation('-')" />
+    <input type="button" value=" = " onclick="calculate()" />
+
+    <script>
+      function writeVal(val) {
+        document.getElementById("txt1").value += val.trim();
+      }
+
+      function clearText() {
+        document.getElementById("txt1").value = "";
+      }
+
+      function deleteCharacter() {
+        var text = document.getElementById("txt1").value;
+        document.getElementById("txt1").value = text.slice(0, -1);
+      }
+
+      function operation(operator) {
+        document.getElementById("txt1").value += " " + operator + " ";
+      }
+
+      function calculate() {
+        var expression = document.getElementById("txt1").value;
+
+        var tokens = expression.split(" ");
+
+        var result = 0;
+        var currentOperator = "+";
+
+        for (var i = 0; i < tokens.length; i++) {
+
+          if (tokens[i] === "+" || tokens[i] === "-") {
+            currentOperator = tokens[i];
+          } else {
+            var number = parseFloat(tokens[i]);
+            if (!isNaN(number)) {
+              if (currentOperator === "+") {
+                result += number;
+              } else if (currentOperator === "-") {
+                result -= number;
+              }
+            }
+          }
+        }
+
+        document.getElementById("txt1").value = result;
+      }
+    </script>
+  </body>
+</html>

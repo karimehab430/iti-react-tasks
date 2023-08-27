@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Photo Gallery</title>
+    <style>
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .gallery-image {
+            max-width: 500px;
+            max-height: 500px;
+            margin: 20px;
+            display: block;
+        }
+
+        .slideshow-controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .slideshow-controls button {
+            margin: 5px;
+        }
+    </style>
+    <script>
+        var currentImageIndex = 0;
+        var images = [
+            '1.jpg',
+            '2.jpg',
+            '3.jpg',
+            '4.jpg',
+            '5.jpg',
+            '6.jpg'
+        ];
+
+        function showImage(index) {
+            var image = document.getElementById('gallery-image');
+            image.src = "./Slideshow/" + images[index];
+            currentImageIndex = index;
+        }
+
+        function nextImage() {
+            currentImageIndex++;
+            if (currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+            showImage(currentImageIndex);
+        }
+
+        function prevImage() {
+            currentImageIndex--;
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            }
+            showImage(currentImageIndex);
+        }
+
+        var slideshowInterval;
+
+        function startSlideshow() {
+            slideshowInterval = setInterval(nextImage, 2000);
+        }
+
+        function stopSlideshow() {
+            clearInterval(slideshowInterval);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="gallery-container">
+        <img id="gallery-image" class="gallery-image" src="" alt="Gallery Image">
+    </div>
+
+    <div class="slideshow-controls">
+        <button onclick="prevImage()">Prev</button>
+        <button onclick="startSlideshow()">Start Slideshow</button>
+        <button onclick="stopSlideshow()">Stop Slideshow</button>
+        <button onclick="nextImage()">Next</button>
+    </div>
+
+    <script>
+        showImage(currentImageIndex);
+    </script>
+</body>
+
+</html>

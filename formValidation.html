@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <style>
+    .form-container {
+      width: 300px;
+      margin: 50px auto;
+    }
+
+    .form-field {
+      margin-bottom: 20px;
+    }
+
+    .form-field label {
+      display: block;
+      font-weight: bold;
+    }
+
+    .form-field input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .form-field input[type="text"]:invalid {
+      border-color: red;
+    }
+
+    .form-field input[type="text"]:valid {
+      border-color: #ccc;
+    }
+
+    .form-field input[type="email"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .form-field input[type="email"]:invalid {
+      border-color: red;
+    }
+
+    .form-field input[type="email"]:valid {
+      border-color: #ccc;
+    }
+
+    
+  </style>
+</head>
+<body>
+    <h1 align = "center">Change Email Address</h1>
+  <div class="form-container">
+    <form>
+      <div class="form-field">
+        <label for="name">Name:</label>
+        <input type="text" id="name" pattern="[A-Za-z]+" required>
+      </div>
+
+      <div class="form-field">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+      </div>
+
+      <div class="form-submit">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+
+

@@ -1,0 +1,21 @@
+body {
+    background-color: #484848
+  }
+  
+  .home-image {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    
+}
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    text-align: center;
+    font-family: Arial, sans-serif;
+
+
+}
